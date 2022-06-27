@@ -7,22 +7,22 @@ namespace Project
         public bool Touched { get; private set; }
         public Vector2 InputVector { get; private set; }
 
-        private Vector2 _pressPos;
+        private Vector2 _lastPos;
 
         public void Update()
         {
             var touches = Input.touches;
             
             Vector2 input = Vector2.zero;
-            
+
             foreach (Touch touch in touches)
             {
                 if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Stationary)
                 {
-                    _pressPos = touch.position; 
+                    _lastPos = touch.position; 
                 }
-                
-                input = (touch.position - _pressPos).normalized;
+
+                input = (touch.position - _lastPos).normalized;
             }
             
             InputVector = input;

@@ -74,14 +74,14 @@ namespace Project
         {
             IInputService inputService = new MobileInputService();
 
-            /*if (Application.isMobilePlatform)
+            if (Application.isMobilePlatform)
             {
                 inputService = new MobileInputService();
             }
             else if (Application.isEditor)
             {
                 inputService = new StandalondeInputService();
-            }*/
+            }
 
             return inputService;
         }

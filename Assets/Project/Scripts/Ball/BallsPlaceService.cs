@@ -7,8 +7,6 @@ namespace Project.Ball
 {
     public class BallsPlaceService : MonoBehaviour
     {
-        [SerializeField] private Transform _spawnPoint;
-
         private BallsPool _ballsPool;
         private BallsMover _ballsMover;
 
@@ -61,6 +59,7 @@ namespace Project.Ball
             {
                 Ball ball = SpawnBall(_ballsMover.GetSpawnPoint());
             }
+
         }
 
         public Ball SpawnInitBall(Vector3 pos)
@@ -94,6 +93,8 @@ namespace Project.Ball
                 SceneManager.LoadScene(0);
                 return;
             }
+            
+            _ballsMover.TightBalls();
         }
 
         private void Update()

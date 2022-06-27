@@ -21,7 +21,6 @@ namespace Project.Ball
             if (context.Collision.gameObject.TryGetComponent<Obstacle>(out var obstacle))
             {
                 _ballsPlaceService.ReturnBall(context.Sender);
-                
             }
         }
     }

@@ -19,7 +19,11 @@ namespace Project.Ball
 
         public bool IsInCrowd()
         {
-            var checkSphere = Physics.OverlapSphere(transform.position, transform.localScale.x / 2 + 0.01f, _ballLayer);
+            var checkSphere =  Physics.OverlapSphere(transform.position,
+                transform.localScale.x / 2);
+            
+            Debug.Log(checkSphere.Length, gameObject);
+            
             return checkSphere.Length > 1;
         }
 
